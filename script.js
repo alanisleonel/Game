@@ -64,8 +64,14 @@ function movePlayer(e) {
     switch(e.key) {
         case 'ArrowLeft':
             if (currentPosition[0] > 0){
-                currentPosition[0] -= 10
+            currentPosition[0] -= 10
             drawPlayer()
+            }
+            break;
+        case 'ArrowRight':
+            if (currentPosition[0] < 460) {
+                currentPosition[0] +=10
+                drawPlayer()
             }
             break;
     }
