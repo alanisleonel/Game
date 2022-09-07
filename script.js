@@ -9,6 +9,7 @@ const ballDiameter = 20
 let timerId
 let xDirection = -2
 let yDirection = 2
+let score = 0
 
 
 const playerStart = [230, 10]
@@ -120,10 +121,22 @@ function checkForCollisions() {
         if (
             (ballCurrentPosition[0] > blocks[i].bottomLeft[0] && ballCurrentPosition[0] < blocks[i].bottomRight[0]) &&
             ((ballCurrentPosition[1] + ballDiameter) > blocks[i].bottomLeft[1] && ballCurrentPosition[1] < blocks[i].topLeft[1])
-            {
-                 const allBlocks = Array.from(document.querySelectorAll('.block'))
+        ) {
+            const allBlocks = Array.from(document.querySelectorAll('.block'))
+            allBlocks[i].classList.remove('block')
+            blocks.splice(i, 1)
+            changeDirection()
+            score++
+            scoreDisplay.innerHTML = score
+
+            //check for win
+            if (blocks.length === 0) {
+                scoreDisplay.innerHTML = 'YOU WON'
+                clearInterval(timerId)
+                document.removeEventListener('keydown', movePlayer)
+
             }
-        )
+            }
     }
     //check for wall collisions
     if (
@@ -134,10 +147,18 @@ function checkForCollisions() {
         changeDirection()
     }
 
+    //check for player collisions
+    if (
+        (ballCurrentPosition[0] > currentPosition[0] && ballCurrentPosition[0] < currentPosition[0] + blockWidth) && 
+        (ballCurrentPosition[1] > currentPosition[1] && ballCurrentPosition[1] < currentPosition[1] + blockHeight)
+    ) {
+        changeDirection()
+    }
+
     // check for game over
     if (ballCurrentPosition[1] <= 0) {
         clearInterval(timerId)
-        scoreDisplay.innerHTML = 'You Suck'
+        scoreDisplay.innerHTML = 'You lose'
         document.removeEventListener('keydown',movePlayer)
     }
 }
