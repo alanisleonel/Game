@@ -2,9 +2,13 @@
 const grid = document.querySelector('.grid')
 const blockHeight = 20
 const blockWidth = 100
+let timerId
 
 const playerStart = [230, 10]
 let currentPosition = playerStart
+
+const ballStart = [270, 35]
+let ballCurrentPosition = ballStart
 
 //creating a block
 class Block {
@@ -59,16 +63,18 @@ function drawPlayer() {
     player.style.bottom = currentPosition[1] + 'px'
 }
 
-//move player
+//move player with arrow keys
 function movePlayer(e) {
     switch(e.key) {
         case 'ArrowLeft':
+            //setting left boundry
             if (currentPosition[0] > 0){
             currentPosition[0] -= 10
             drawPlayer()
             }
             break;
         case 'ArrowRight':
+            //setting right boundry
             if (currentPosition[0] < 460) {
                 currentPosition[0] +=10
                 drawPlayer()
@@ -76,5 +82,25 @@ function movePlayer(e) {
             break;
     }
 }
-
+//when arrow keys are pressed, player moves 
 document.addEventListener('keydown', movePlayer)
+
+//draw ball
+function drawBall() {
+    ball.style.left = ballCurrentPosition[0] + 'px'
+    ball.style.bottom = ballCurrentPosition[1] + 'px'
+}
+//creating DESTROYER aka ball
+const ball = document.createElement('div')
+ball.classList.add('ball')
+drawBall()
+grid.appendChild(ball)
+
+//move ball
+function moveBall() {
+    ballCurrentPosition[0] += 2
+    ballCurrentPosition[1] += 2
+    drawBall()
+}
+
+timerId = setInterval(moveBall, 30)
