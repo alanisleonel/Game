@@ -7,8 +7,8 @@ const boardWidth  = 560
 const boardHeight = 300
 const ballDiameter = 20
 let timerId
-let xDirection = -2
-let yDirection = 2
+let xDirection = -4
+let yDirection = 4
 let score = 0
 
 
@@ -112,7 +112,7 @@ function moveBall() {
     checkForCollisions()
 }
 
-timerId = setInterval(moveBall, 30)
+timerId = setInterval(moveBall, 1000)
 
 //check for collisions
 function checkForCollisions() {
@@ -164,20 +164,20 @@ function checkForCollisions() {
 }
 
 function changeDirection() {
-    if (xDirection === 2 && yDirection === 2) {
-        yDirection = -2
+    if (xDirection === 4 && yDirection === 4) {
+        yDirection = -4
         return
     }
-    if (xDirection === 2 && yDirection === -2) {
-        xDirection = -2
+    if (xDirection === 4 && yDirection === -4) {
+        xDirection = -4
         return
     }
-    if (xDirection === -2 && yDirection === -2) {
-        yDirection = 2
+    if (xDirection === -4 && yDirection === -4) {
+        yDirection = 4
         return
     }
-    if (xDirection === -2 && yDirection === 2) {
-        xDirection = 2
+    if (xDirection === -4 && yDirection === 4) {
+        xDirection = 4
         return
     }
 
