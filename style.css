@@ -1,15 +1,22 @@
+* {
+    background-color: rgb(155, 148, 148);
+}
 .grid{
     position: absolute;
     width: 560px;
     height: 300px;
-    border: solid black 1px;
-    background-color: black;
+    border: solid beige 1px;
+    background-color: rgba(155, 53, 53, 0.464);
+    border-radius: 25px;
+    
+    
 }
 
 .block {
     position: absolute;
     width: 100px;
     height: 20px;
+    border-radius: 50px;
     background-color: red;
 }
 
@@ -17,7 +24,8 @@
     position: absolute;
     width: 100px;
     height: 20px;
-    background-color: green;
+    background-color: navajowhite;
+    border-radius: 25px;
 }
 
 .ball {
@@ -27,3 +35,10 @@
     border-radius: 10px;
     background-color: palegreen;
 }
+
+#score {
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2em;
+}
+

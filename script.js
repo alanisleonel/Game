@@ -75,14 +75,28 @@ function drawPlayer() {
 function movePlayer(e) {
     switch(e.key) {
         case 'ArrowLeft':
-            //setting left boundry
+            //setting left boundary
             if (currentPosition[0] > 0){
             currentPosition[0] -= 10
             drawPlayer()
             }
             break;
         case 'ArrowRight':
-            //setting right boundry
+            //setting right boundary
+            if (currentPosition[0] < boardWidth - blockWidth) {
+                currentPosition[0] +=10
+                drawPlayer()
+            }
+            break;
+        case 'ArrowUp':
+            //using ArrowUp to move player left
+            if (currentPosition[0] > 0){
+                currentPosition[0] -= 10
+                drawPlayer()
+            }
+            break;
+        case 'ArrowDown':
+            //using ArrowDown to move player right
             if (currentPosition[0] < boardWidth - blockWidth) {
                 currentPosition[0] +=10
                 drawPlayer()
