@@ -1,10 +1,56 @@
 * {
-    background-color: rgb(155, 148, 148);
+    box-sizing: border-box;
+}
+
+body{
+    background-color:#668D9D90;
+    margin: 0;
+}
+.page-title{
+    position: absolute;
+    top: 0px;
+    left: 800px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    color: black;
+    background-color: transparent;
+    font-size: 4em;
+}
+.overlay-text{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #647bcb;
+    z-index: 100;
+}
+
+.overlay-text.visible {
+    display: flex;
+    animation: overlay-grow 500ms forwards;
+}
+
+@keyframes overlay-grow {
+    from {
+        background-color: rgba(0,0,0,0);
+        font-size: 0;
+    }
+    to {
+        background-color: rgba(0,0,0,0.8);
+        font-size: 10em;
+    }
 }
 .grid{
     position: absolute;
     width: 560px;
     height: 300px;
+    top: 300px;
+    left: 700px;
     border: solid beige 1px;
     background-color: rgba(155, 53, 53, 0.464);
     border-radius: 25px;
@@ -17,7 +63,7 @@
     width: 100px;
     height: 20px;
     border-radius: 50px;
-    background-color: red;
+    background-color: #BBDB9B;
 }
 
 .player {
@@ -37,8 +83,11 @@
 }
 
 #score {
+    position: absolute;
+    top: 250px;
+    left: 1130px;
     color: white;
+    background-color: transparent;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 2em;
 }
-

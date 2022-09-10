@@ -11,6 +11,25 @@ let xDirection = -4
 let yDirection = 4
 let score = 0
 
+if(document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', ready());
+} else {
+    ready();
+}
+
+function ready() {
+    let overlays = Array.from(document.getElementsByClassName('overlay-text'));
+    
+    overlays.forEach(overlay => {
+        overlay.addEventListener('click', () => {
+            overlay.classList.remove('visible');
+        })
+    })
+}
+
+
+
+
 
 const playerStart = [230, 10]
 let currentPosition = playerStart
@@ -125,8 +144,10 @@ function moveBall() {
     drawBall()
     checkForCollisions()
 }
-
-timerId = setInterval(moveBall, 1000)
+//delay ball movement 5 seconds after page has loaded
+setTimeout(() => {
+    timerId = setInterval(moveBall, 40) 
+}, 5000);
 
 //check for collisions
 function checkForCollisions() {
