@@ -29,8 +29,6 @@ function ready() {
 
 
 
-
-
 const playerStart = [230, 10]
 let currentPosition = playerStart
 
@@ -217,3 +215,9 @@ function changeDirection() {
     }
 
 }
+//restart game
+const restartButton = document.getElementById("restart")
+restartButton.addEventListener("click", () => {
+    console.log('pressed')
+    window.location.reload(true) ;
+})

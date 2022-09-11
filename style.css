@@ -26,11 +26,12 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #647bcb;
+    color: transparent;
     z-index: 100;
 }
 
 .overlay-text.visible {
+    color: #647bcb;
     display: flex;
     animation: overlay-grow 500ms forwards;
 }
@@ -90,4 +91,16 @@ body{
     background-color: transparent;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 2em;
+}
+
+button {
+    position: absolute;
+    top: 250px;
+    left: 700px;
+    background-color:transparent;
+    font-size: 32px;
+    font-family: Arial, Helvetica, sans-serif;
+    border: none;
+    color: white;
+    z-index: 100;
 }
