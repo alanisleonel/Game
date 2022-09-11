@@ -27,11 +27,17 @@ function ready() {
     })
 }
 
+//restart game
+const restartButton = document.getElementById("restart")
+restartButton.addEventListener("click", () => {
+    window.location.reload(true) ;
+})
 
 
+//starting position of player
 const playerStart = [230, 10]
 let currentPosition = playerStart
-
+//starting position of ball
 const ballStart = [270, 35]
 let ballCurrentPosition = ballStart
 
@@ -144,7 +150,7 @@ function moveBall() {
 }
 //delay ball movement 5 seconds after page has loaded
 setTimeout(() => {
-    timerId = setInterval(moveBall, 40) 
+    timerId = setInterval(moveBall, 20) 
 }, 5000);
 
 //check for collisions
@@ -215,9 +221,4 @@ function changeDirection() {
     }
 
 }
-//restart game
-const restartButton = document.getElementById("restart")
-restartButton.addEventListener("click", () => {
-    console.log('pressed')
-    window.location.reload(true) ;
-})
+
