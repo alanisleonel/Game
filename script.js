@@ -150,7 +150,7 @@ function moveBall() {
 }
 //delay ball movement 5 seconds after page has loaded
 setTimeout(() => {
-    timerId = setInterval(moveBall, 20) 
+    timerId = setInterval(moveBall, 40) 
 }, 5000);
 
 //check for collisions
@@ -170,7 +170,7 @@ function checkForCollisions() {
 
             //check for win
             if (blocks.length === 0) {
-                scoreDisplay.innerHTML = 'YOU WON'
+                scoreDisplay.innerHTML = 'YOU WIN!!'
                 clearInterval(timerId)
                 document.removeEventListener('keydown', movePlayer)
 
