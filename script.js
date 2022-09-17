@@ -11,7 +11,8 @@ let xDirection = -4
 let yDirection = 4
 let score = 0
 
-//looks at page to see if all the content in the html file has loaded before running a function. Code from PortEXE to help with the overlay at start  
+/*looks at page to see if all the content in the html file has loaded before running a function. 
+Code from PortEXE to help with the overlay at start*/
 if(document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', ready());
 } else {
