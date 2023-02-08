@@ -1,0 +1,29 @@
+.page-title {
+  color: red;
+}
+
+#score {
+  color: red;
+}
+
+.controls-1 {
+  color: red;
+}
+
+.controls-2 {
+  color: red;
+}
+
+button {
+  color: red;
+}
+
+.synth {
+  border: solid black;
+}
+
+.grid {
+  border: solid black;
+  background-color: rgba(155, 53, 53, 0.464) lor;
+}
+/*# sourceMappingURL=style.css.map */
