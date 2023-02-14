@@ -8,22 +8,31 @@
 
 .controls-1 {
   color: red;
+  position: absolute;
 }
 
 .controls-2 {
   color: red;
+  position: absolute;
 }
 
 button {
   color: red;
+  position: absolute;
 }
 
 .synth {
   border: solid black;
+  position: absolute;
 }
 
 .grid {
   border: solid black;
-  background-color: rgba(155, 53, 53, 0.464) lor;
+  position: absolute;
+  background-color: rgba(155, 53, 53, 0.464);
+  width: 560px;
+  height: 300px;
+  top: 300px;
+  left: 700px;
 }
 /*# sourceMappingURL=style.css.map */

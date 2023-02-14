@@ -3,6 +3,11 @@ $game-theme-color: red;
 @mixin cool-border($size: 1px, $color:black){
     border: solid $color;
 }
+
+@mixin position{
+    position: absolute;
+}
+
 $game-background-color: black;
 
 .page-title {
@@ -15,20 +20,30 @@ $game-background-color: black;
 
 .controls-1 {
     color: $game-theme-color;
+    @include position();
 }
+
 .controls-2 {
     color: $game-theme-color;
+    @include position();
 }
 
 button {
     color: $game-theme-color;
+    @include position();
 }
 
 .synth {
-    @include cool-border(white)
+    @include cool-border(white);
+    @include position();
 }
 
 .grid {
     @include cool-border(beige);
-    background-color: rgba(155, 53, 53, 0.464)lor
+    @include position();
+    background-color: rgba(155, 53, 53, 0.464);
+    width: 560px;
+    height: 300px;
+    top: 300px;
+    left: 700px;
 }
