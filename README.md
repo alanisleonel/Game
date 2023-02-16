@@ -3,4 +3,5 @@ Welcome to Destruction! Your objective is help DESTROYER (ball) obliterate the b
 
 # Stack
 JavaScript,
-CSS
+CSS,
+HTML
